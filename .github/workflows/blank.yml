@@ -15,7 +15,7 @@ jobs:
 
         id: plan
         run: |
-          terraform init && terraform plan -out check.tfplan && terraform show -json check.tfplan > check.tfplan.json
+          cd /home/bipin/jenkins-example-terraform && terraform init && terraform plan -out check.tfplan && terraform show -json check.tfplan > check.tfplan.json
       
       - name: terraform-compliance
         uses: terraform-compliance/github_action@main
