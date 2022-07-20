@@ -10,9 +10,7 @@ jobs:
 
       steps:
       - uses: actions/checkout@v2
-      - uses: hashicorp/setup-terraform@v1
       - name: terraform plan
-
         id: plan
         run: |
           cd /home/bipin/jenkins-example-terraform/
@@ -20,9 +18,8 @@ jobs:
           terraform init 
           terraform plan -out check.tfplan 
           terraform show -json check.tfplan > check.tfplan.json
-      
       - name: terraform-compliance
-        uses: terraform-compliance/github_action@main
+      - uses: terraform-compliance/github_action@0.3.0
         with:
           plan: check.tfplan.json
           features: https://github.com/Bipin210/jenkins-example-terraform.git
