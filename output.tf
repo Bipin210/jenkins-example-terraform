@@ -1,3 +1,3 @@
-output "aadi_vpc" {
-  value = module.aadi_vpc.vpc_id
+output "bipin_vpc" {
+  value = module.bipin_vpc.vpc_id
 }

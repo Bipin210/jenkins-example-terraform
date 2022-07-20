@@ -1,8 +1,8 @@
-module "aadi_vpc" {
+module "bipin_vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.17.0"
 
-  name = "aadi-vpc"
+  name = "bipin-vpc"
 
   cidr = "10.0.0.0/16"
 
@@ -14,7 +14,7 @@ module "aadi_vpc" {
 }
 
 resource "aws_security_group" "sg" {
-  name_prefix = "aadi"
+  name_prefix = "bipin"
   description = "Allow SSH inbound traffic"
 
 }
@@ -24,7 +24,7 @@ resource "aws_security_group_rule" "example" {
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = ["10.10.0.0/16"]
+  cidr_blocks       = ["10.0.0.0/16"]
   description       = "access to the ssh port"
   security_group_id = aws_security_group.sg.id
 }
