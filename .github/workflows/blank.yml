@@ -3,9 +3,11 @@ jobs:
         name: terraform CI
         runs-on: ubuntu-latest
 
+
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
+      - uses: terraform-compliance/github_action@main
 
       - name: terraform plan
         id: plan
