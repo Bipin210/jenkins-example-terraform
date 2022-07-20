@@ -21,6 +21,6 @@ jobs:
       - name: terraform-compliance
         id: run
         run: |
-        cd /home/bipin/jenkins-example-terraform/
-        terraform-compliance -f . -p check.tfplan.json  
+          cd /home/bipin/jenkins-example-terraform/
+          terraform-compliance -f . -p check.tfplan.json  
        
