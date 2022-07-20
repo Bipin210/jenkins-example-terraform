@@ -6,8 +6,8 @@ on:
 
 jobs:
     terraform:
-        name: terraform CI
         runs-on: self-hosted
+
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
