@@ -1,9 +1,7 @@
 jobs:
     terraform:
         name: terraform CI
-        runs-on: ubuntu-latest
-
-
+        runs-on: self-hosted
     steps:
       - name: terraform-compliance
         uses: terraform-compliance/github_action@0.3.0
