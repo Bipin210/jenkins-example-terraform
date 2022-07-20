@@ -1,0 +1,19 @@
+jobs:
+    terraform:
+        name: terraform CI
+        runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
+
+      - name: terraform plan
+        id: plan
+        run: |
+          terraform init && terraform plan -out=check.tfplan && terraform show -json check.tfplan > check.tfplan.json
+      
+      - name: terraform-compliance
+        uses: terraform-compliance/github_action@main
+        with:
+          plan: check.tfplan.json
+          features: https://github.com/Bipin210/jenkins-example-terraform.git
