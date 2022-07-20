@@ -3,9 +3,8 @@ jobs:
         name: terraform CI
         runs-on: self-hosted
     steps:
-      - name: terraform-compliance
-        uses: terraform-compliance/github_action@0.3.0
-
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
       - name: terraform plan
         id: plan
         run: |
